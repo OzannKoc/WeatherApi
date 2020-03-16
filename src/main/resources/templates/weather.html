@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Hava Durumu</title>
+</head>
+<body>
+<div th:name="Sehir"><h3>Ankara Hava Durumu</h3></div>
+<div th:name="table1">
+<table border="1">
+<div th:name="row1">
+    <tr>
+        <td>Sıcaklık</td>
+        <td>Nem</td>
+        <td>Basınç</td>
+        <td>Tarih</td>
+        <td></td>
+    </tr>
+</div>
+<div th:name="row2">
+    <tr th:each="weatherAnkara : ${weatherListAnkara}">
+        <td th:text="${weatherAnkara.temp}+C">text </td>
+        <td th:text="${weatherAnkara.humidity}">text</td>
+        <td th:text="${weatherAnkara.pressure}">text</td>
+        <td th:text="${weatherAnkara.date}">text</td>
+        <td width="64px" height="64px"><img src="snow_s_rain.png" height="64" width="64"></td>
+
+    </tr>
+</div>
+
+</table>
+</div>
+</body>
+</html>
