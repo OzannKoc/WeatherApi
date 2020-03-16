@@ -65,6 +65,7 @@ public class WeatherMapperImp implements WeatherMapper {
         String tempAsString = String.valueOf(newTemp);
         int pointIndex =tempAsString.indexOf(".");
         tempAsString = tempAsString.substring(0,pointIndex);
+        tempAsString = tempAsString+" "+"\u2103";
         return tempAsString;
     }
 

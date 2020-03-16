@@ -21,7 +21,7 @@
 </div>
 <div th:name="row2">
     <tr th:each="weatherAnkara : ${weatherListAnkara}">
-        <td th:text="${weatherAnkara.temp}+C">text </td>
+        <td th:text="${weatherAnkara.temp}">text </td>
         <td th:text="${weatherAnkara.humidity}">text</td>
         <td th:text="${weatherAnkara.pressure}">text</td>
         <td th:text="${weatherAnkara.date}">text</td>
