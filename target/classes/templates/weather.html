@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div th:name="Sehir"><h3>Ankara Hava Durumu</h3>
-</div>
+<div ><header><span><h2>Ankara Hava Durumu</h2></span></header>
 
 
-<div class="row row-cols-1 row-cols-md-1" style="width: 200px;margin-left: 20px" >
+
+<div class="row row-cols-9 row-cols-md-9"  >
 <div class="col mb-5"  th:each="weatherAnkara : ${weatherListAnkara}">
     <div class="card" >
         <img th:src="${weatherAnkara.weatherDescription}" class="card-img-top" alt="..." width="64" height="64"/>
@@ -31,6 +31,6 @@
     </div>
 </div>
 </div>
-
+</div>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class WeatherMapperImp implements WeatherMapper {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode node = objectMapper.readTree(getWeathersAsString());
         List<Weather> myWeatherList = new ArrayList<Weather>();
-        for (int i=0 ;i<=8 ;i++){
+        for (int i=0 ;i<=13 ;i++){
             String tempOfTheTime= node.get("list").get(i).get("main").get("temp").asText();
             String humidityOfTheTime= node.get("list").get(i).get("main").get("humidity").asText();
             String pressureOfTheTime= node.get("list").get(i).get("main").get("pressure").asText();
