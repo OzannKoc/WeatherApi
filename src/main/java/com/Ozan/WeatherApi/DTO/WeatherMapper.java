@@ -15,6 +15,6 @@ import java.util.List;
 public interface WeatherMapper {
     public String getWeathersAsString();
     public List<Weather> getWeathersList() throws JsonProcessingException;
-    public Weather setWeatherProperties(String temp , String humidity,String pressure ,String date);
+    public Weather setWeatherProperties(String temp , String humidity,String pressure ,String date,String description);
 
 }

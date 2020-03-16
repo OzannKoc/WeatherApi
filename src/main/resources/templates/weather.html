@@ -2,35 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org"
         lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>Hava Durumu</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div th:name="Sehir"><h3>Ankara Hava Durumu</h3></div>
-<div th:name="table1">
-<table border="1">
-<div th:name="row1">
-    <tr>
-        <td>Sıcaklık</td>
-        <td>Nem</td>
-        <td>Basınç</td>
-        <td>Tarih</td>
-        <td></td>
-    </tr>
-</div>
-<div th:name="row2">
-    <tr th:each="weatherAnkara : ${weatherListAnkara}">
-        <td th:text="${weatherAnkara.temp}">text </td>
-        <td th:text="${weatherAnkara.humidity}">text</td>
-        <td th:text="${weatherAnkara.pressure}">text</td>
-        <td th:text="${weatherAnkara.date}">text</td>
-        <td width="64px" height="64px"><img src="snow_s_rain.png" height="64" width="64"></td>
-
-    </tr>
+<div th:name="Sehir"><h3>Ankara Hava Durumu</h3>
 </div>
 
-</table>
+
+<div class="row row-cols-1 row-cols-md-1" style="width: 200px;margin-left: 20px" >
+<div class="col mb-5"  th:each="weatherAnkara : ${weatherListAnkara}">
+    <div class="card" >
+        <img th:src="${weatherAnkara.weatherDescription}" class="card-img-top" alt="..." width="64" height="64"/>
+        <div class="card-body">
+            <span class="badge badge-success" th:text="${weatherAnkara.date}">Success</span>
+            <span class="badge badge-info" th:text="${weatherAnkara.temp}" >Info</span>
+            <span class="badge badge-secondary">
+            Nem:
+            <span th:text="${weatherAnkara.humidity}"></span>
+            %</span> <br>
+            <span class="badge badge-warning">
+            Basınç:
+            <span th:text="${weatherAnkara.pressure}"></span>
+            hpa</span>
+        </div>
+    </div>
 </div>
+</div>
+
 </body>
 </html>

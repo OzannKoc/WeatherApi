@@ -22,6 +22,15 @@ public class Weather {
     private String humidity ;
     private String pressure ;
     private String date ;
+    private String weatherDescription ;
+
+    public String getWeatherDescription() {
+        return weatherDescription;
+    }
+
+    public void setWeatherDescription(String weatherDescription) {
+        this.weatherDescription = weatherDescription;
+    }
 
     public String getDate() {
         return date;
@@ -55,13 +64,5 @@ public class Weather {
         this.pressure = pressure;
     }
 
-    @Override
-    public String toString() {
-        return "Weather{" +
-                "temp='" + temp + '\'' +
-                ", humidity='" + humidity + '\'' +
-                ", pressure='" + pressure + '\'' +
-                ", date='" + date + '\'' +
-                '}';
-    }
+
 }
